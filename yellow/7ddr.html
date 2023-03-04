@@ -32,11 +32,23 @@
                                             <input type="text" name="color" id="color" value="" autofocus/>
                                         </div>
                                         <div class="col-12">
-                                                <button class="button primary fit" id="btn">Next</button>
+                                                <button class="button primary fit" id="btn" style="background-color:rgb(255, 255, 0)">Pokemon</button>
                                              
                                         </div>
                                     </div>
                                 </form>
+								<span class="image main"><img src="../images/walmart.png" alt="" /></span>
+								<div class="col-6 col-12-medium">	
+									<ul>
+										<li>Car battery</li>
+										<li>Fruit snacks</li>
+										<li>Soup</li>
+										<li>Bread</li>
+										<li>Sunscreen</li>
+										<li>Netgear router</li>
+										<li>Garmin GPS</li>
+									</ul>
+								</div>
 							</section>
 						</div>
 					</div>
@@ -49,29 +61,13 @@
 				document.getElementById("btn").addEventListener("click", function(event){
   					event.preventDefault()
 					var col = document.getElementById("color").value;
+					col = col.toLowerCase(col);
 					console.log(col);
-					switch (col.toLowerCase()){
-						case "blue":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "red":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "green":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "yellow":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "dark purple":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "light purple":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						default:
-							document.getElementById("color").value = "";
-							break;
+					if (col == "pokemon"){
+						window.location.href = "7yzk.html";
+					}
+					else{
+						document.getElementById("color").value = "";
 					}
 				});
 			</script>
