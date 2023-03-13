@@ -1,7 +1,7 @@
 Top Ten movies
-Zach: Top Gun 110
-Belle: Pride and Prejudice 270
-Mom; Napolean Dynamite 156
-Dad: Jungle Book 588
-Marilou: Monty Python and the Holy Grail 921
-Helen:Birdman 204
+Zach: Top Gun 110 green
+Belle: Pride and Prejudice 270 yellow
+Mom; Napolean Dynamite 156 dark purple
+Dad: Jungle Book 588 light purple
+Marilou: Monty Python and the Holy Grail 921 blue
+Helen:Birdman 204 light purple

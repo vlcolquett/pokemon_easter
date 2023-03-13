@@ -12,8 +12,87 @@
 		<link rel="stylesheet" href="../assets/css/main.css" />
 		<link rel="icon" type="image/png"  href="../images/pokeball.png">
 		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+		<script>
+        
+			function allowDrop(ev) {
+			  ev.preventDefault();
+			  var data = ev.dataTransfer.getData("text");
+			  
+			}
+			
+			function drag(ev) {
+			  ev.dataTransfer.setData("text", ev.target.id);
+			  ev.dataTransfer.effectAllowed = "copyMove";
+	
+			}
+			
+			function drop(ev) {
+			  ev.preventDefault();
+			  var data = ev.dataTransfer.getData("text");
+			  //ev.target.appendChild(document.getElementById(data));
+			  var nodeCopy = document.getElementById(data).cloneNode(true);
+			  nodeCopy.id = "newId";
+			  ev.target.appendChild(nodeCopy);
+			}
+			function checkDrops(){
+				var drop1 = document.getElementById("div7");
+				var drop2 = document.getElementById("div8");
+				var drop3 = document.getElementById("div9");
+	
+				var color1 = document.getElementById("red").innerHTML.toString().trim().substring(0,40);
+				var color2 = document.getElementById("blue").innerHTML.toString().trim().substring(0,40);
+				var color3 = document.getElementById("light p").innerHTML.toString().trim().substring(0,40);
+				var color4 = document.getElementById("dark p").innerHTML.toString().trim().substring(0,40);
+				var color5 = document.getElementById("yellow").innerHTML.toString().trim().substring(0,40);
+				var color6 = document.getElementById("green").innerHTML.toString().trim().substring(0,40);
+				console.log(drop1.innerHTML.toString())
+				//console.log(color1)
+				if(drop1.childNodes.length === 1 && drop2.childNodes.length === 1 && drop3.childNodes.length === 1){
+					console.log("still works")
+					//console.log(drop1.innerHTML.toString())
+					//console.log(drop2.innerHTML.toString())
+					
+					if(drop1.innerHTML.toString().substring(0,40) == color4 && drop2.innerHTML.toString().substring(0,40) == color5 && drop3.innerHTML.toString().substring(0,40) == color1){
+						console.log("yippee");
+						//recover form
+						document.getElementById("form").style.display = "inline";
+					}
+					else{
+						location.reload()
+					}
+				}
+			}
+	   
+		</script>
 	</head>
 	<body class="is-preload">
+		<style>
+			        #div1, #div2, #div3, #div4, #div6, #div5, #newId {
+          width: 60px;
+          height: 60px; 
+          /*margin: 10px;*/
+          padding: 10px;
+        }
+		#div7, #div8, #div9 {
+          
+          width: 60px;
+          height: 60px;
+          margin: 10px;
+          padding: 10px;
+          border: 1px solid black;
+        }
+        .column {
+        /*float: left;
+        /*width: 50%;*/
+        
+		display:flex;
+         }
+
+        .row {
+        padding: 10px;
+        
+        }
+		</style>
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -23,20 +102,66 @@
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-                            <!-- Drag and Drop nincada-->
+                            <!-- Drag and Drop nincada -->
 							<section>
                                 <h2>Let's Gooooo</h2>
-                                <form method="post" action="#">
+								<div class="row" >
+									<div class="column">
+										<div ondrop="drop(event)" ondragover="allowDrop(event)" class="col-12-xsmall">
+											<span id="blue">
+												<img src="../images/pokeball_blue.png"id="div5" draggable="true" ondragstart="drag(event)" id="drag4" ondragend="checkDrops()">
+											</span>
+										</div>
+										<div ondrop="drop(event)" ondragover="allowDrop(event)" class="col-12-xsmall">
+											<span id="red">
+												<img src="../images/pokeball_red.png"id="div1" draggable="true" ondragstart="drag(event)" id="drag1" ondragend="checkDrops()">
+											</span>
+										</div>
+										<div ondrop="drop(event)" ondragover="allowDrop(event)" class="col-12-xsmall">
+											<span id="light p">
+												<img src="../images/pokeball_light_purp.png"id="div2" draggable="true" ondragstart="drag(event)" id="drag2" ondragend="checkDrops()">
+											</span>
+										</div>
+										<div ondrop="drop(event)" ondragover="allowDrop(event)" class="col-12-xsmall">
+											<span id="dark p">
+												<img src="../images/pokeball_dark_purp.png"id="div3" draggable="true" ondragstart="drag(event)" id="drag3" ondragend="checkDrops()">
+											</span>
+											</div>
+										<div ondrop="drop(event)" ondragover="allowDrop(event)" class="col-12-xsmall">
+											<span id="yellow">
+												<img src="../images/pokeball_yellow.png"id="div4" draggable="true" ondragstart="drag(event)" id="drag4" ondragend="checkDrops()">
+											</span>
+											</div>
+										<div ondrop="drop(event)" ondragover="allowDrop(event)" class="col-12-xsmall">
+											<span id="green">
+												<img src="../images/pokeball_green.png"id="div6" draggable="true" ondragstart="drag(event)" id="drag4" ondragend="checkDrops()">
+											</span>
+											</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="column">
+										<div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+										
+										<div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							
+										<div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							
+									</div>
+								</div>
+								
+                                <form method="post" action="#" style="display:none;" id="form">
                                     <div class="row gtr-uniform">
                                         <div class="col-6 col-12-xsmall">
                                             <input type="text" name="color" id="color" value="" autofocus/>
                                         </div>
                                         <div class="col-12">
-                                                <button class="button primary fit" id="btn">Next</button>
+                                                <button class="button primary fit" id="btn" style="background-color:rgb(255, 255, 0)">Next</button>
                                              
                                         </div>
                                     </div>
                                 </form>
+								<span class="image main"><img src="../images/kitchen_window.png" alt="" /></span>
 							</section>
 						</div>
 					</div>
@@ -45,36 +170,20 @@
 			</div>
 
 		<!-- Scripts -->
-			<script>
-				document.getElementById("btn").addEventListener("click", function(event){
-  					event.preventDefault()
-					var col = document.getElementById("color").value;
-					console.log(col);
-					switch (col.toLowerCase()){
-						case "blue":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "red":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "green":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "yellow":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "dark purple":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "light purple":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						default:
-							document.getElementById("color").value = "";
-							break;
-					}
-				});
-			</script>
+		<script>
+			document.getElementById("btn").addEventListener("click", function(event){
+				  event.preventDefault()
+				var col = document.getElementById("color").value;
+				col = col.toLowerCase(col);
+				console.log(col);
+				if (col == "nincada"){
+					window.location.href = "../start.html";
+				}
+				else{
+					document.getElementById("color").value = "";
+				}
+			});
+		</script>
 			<script src="../assets/js/jquery.min.js"></script>
 			<script src="../assets/js/browser.min.js"></script>
 			<script src="../assets/js/breakpoints.min.js"></script>
