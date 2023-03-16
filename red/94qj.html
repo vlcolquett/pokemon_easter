@@ -30,14 +30,15 @@
                                 <form method="post" action="#">
                                     <div class="row gtr-uniform">
                                         <div class="col-6 col-12-xsmall">
-                                            <input type="text" name="color" id="color" value="" autofocus/>
+                                            <input type="text" name="color" id="color" value="" onkeyup="bible()"/>
                                         </div>
                                         <div class="col-12">
-                                                <button class="button primary fit" id="btn"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
+                                                <button class="button primary fit" id="btn" style="background-color:rgb(255, 0, 0); display:none;"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
                                              
                                         </div>
                                     </div>
                                 </form>
+								<span class="image main"><img src="../images/bookshelf.png" alt="" /></span>
 							</section>
 						</div>
 					</div>
@@ -47,32 +48,31 @@
 
 		<!-- Scripts -->
 			<script>
+				function bible(){
+					var word = document.getElementById("color");
+					var checker = word.value.length;
+					if(checker === 18){
+						var verse = word.value.toLowerCase();
+						console.log(verse);
+						if(verse === "thessalonians 4:14"){
+							document.getElementById("btn").style.display = "inline";
+							word.value = "";
+						}else{
+							word.value="";
+						}
+					}else if(checker > 18){
+						word.value="";
+					}
+				}
 				document.getElementById("btn").addEventListener("click", function(event){
   					event.preventDefault()
 					var col = document.getElementById("color").value;
 					console.log(col);
-					switch (col.toLowerCase()){
-						case "blue":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "red":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "green":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "yellow":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "dark purple":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						case "light purple":
-							window.location.href = "https://vlcolquett.github.io";
-							break;
-						default:
-							document.getElementById("color").value = "";
-							break;
+					if (col == "emboar"){
+						window.location.href = "f6to.html";
+					}
+					else{
+						document.getElementById("color").value = "";
 					}
 				});
 			</script>
