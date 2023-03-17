@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Catch Em All!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" type="image/png"  href="../images/pokeball.png">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Menu -->
+					
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            <!-- Walmart -->
+							<section>
+                                <h2>Let's Gooooo</h2>
+                                <form method="post" action="#">
+                                    <div class="row gtr-uniform">
+                                        <div class="col-6 col-12-xsmall">
+                                            <input type="text" name="color" id="color" value="" autofocus/>
+                                        </div>
+                                        <div class="col-12">
+                                                <button class="button primary fit" id="btn" style="background-color:rgb(255, 255, 255)"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
+                                             
+                                        </div>
+                                    </div>
+                                </form>
+								<span class="image main"><img src="../images/wally_recycle.png" alt="" /></span>
+								<div class="col-6 col-12-medium">	
+									<ul>
+										<li>Garmin GPS</li>
+										<li>Bike</li>
+										<li>Sunscreen</li>
+										<li>Emergen-C</li>
+                                        <li>Celery</li>
+                                        <li>Oreos</li>
+									</ul>
+								</div>
+							</section>
+						</div>
+					</div>
+						
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				document.getElementById("btn").addEventListener("click", function(event){
+  					event.preventDefault()
+					var col = document.getElementById("color").value.trim();
+					col = col.toLowerCase(col);
+					console.log(col);
+					if (col == "aerodactyl"){
+						window.location.href = "wa1d.html";
+					}
+					else{
+						document.getElementById("color").value = "";
+					}
+				});
+			</script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

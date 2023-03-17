@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Catch Em All!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" type="image/png"  href="../images/pokeball.png">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Menu -->
+					
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            <!-- Bible-->
+							<section>
+                                <h2>Let's Gooooo</h2>
+								<p>"Then he said to them all: Whoever wants to be my disciple must deny themselves and take up their cross daily and follow me."</p>
+                                <form method="post" action="#">
+                                    <div class="row gtr-uniform">
+                                        <div class="col-6 col-12-xsmall">
+                                            <input type="text" name="color" id="color" value="" onkeyup="bible()"/>
+                                        </div>
+                                        <div class="col-12">
+                                                <button class="button primary fit" id="btn" style="background-color:rgb(255, 255, 255); display:none;"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
+                                             
+                                        </div>
+                                    </div>
+                                </form>
+								<span class="image main"><img src="../images/bookshelf.png" alt="" /></span>
+							</section>
+						</div>
+					</div>
+						
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				function bible(){
+					var word = document.getElementById("color");
+					var checker = word.value.length;
+					if(checker === 9){
+						var verse = word.value.toLowerCase();
+						console.log(verse);
+						if(verse === "luke 9:23"){
+							document.getElementById("btn").style.display = "inline";
+							word.value = "";
+						}else{
+							word.value="";
+						}
+					}else if(checker > 9){
+						word.value="";
+					}
+				}
+				document.getElementById("btn").addEventListener("click", function(event){
+  					event.preventDefault()
+					var col = document.getElementById("color").value.trim();
+					col = col.toLowerCase(col);
+					console.log(col);
+					if (col == "porygon2"){
+						window.location.href = "o7ra.html";
+					}
+					else{
+						document.getElementById("color").value = "";
+					}
+				});
+			</script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>

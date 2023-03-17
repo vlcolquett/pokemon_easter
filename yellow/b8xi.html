@@ -35,9 +35,9 @@
 			  ev.target.appendChild(nodeCopy);
 			}
 			function checkDrops(){
-				var drop1 = document.getElementById("div7");
-				var drop2 = document.getElementById("div8");
-				var drop3 = document.getElementById("div9");
+				var drop1 = document.getElementById("div8");
+				var drop2 = document.getElementById("div9");
+				var drop3 = document.getElementById("div10");
 	
 				var color1 = document.getElementById("red").innerHTML.toString().trim().substring(0,40);
 				var color2 = document.getElementById("blue").innerHTML.toString().trim().substring(0,40);
@@ -45,6 +45,7 @@
 				var color4 = document.getElementById("dark p").innerHTML.toString().trim().substring(0,40);
 				var color5 = document.getElementById("yellow").innerHTML.toString().trim().substring(0,40);
 				var color6 = document.getElementById("green").innerHTML.toString().trim().substring(0,40);
+                var color7 = document.getElementById("white").innerHTML.toString().trim().substring(0,40);
 				console.log(drop1.innerHTML.toString())
 				//console.log(color1)
 				if(drop1.childNodes.length === 1 && drop2.childNodes.length === 1 && drop3.childNodes.length === 1){
@@ -67,13 +68,13 @@
 	</head>
 	<body class="is-preload">
 		<style>
-			        #div1, #div2, #div3, #div4, #div6, #div5, #newId {
-          width: 60px;
-          height: 60px; 
-          /*margin: 10px;*/
-          padding: 10px;
-        }
-		#div7, #div8, #div9 {
+			#div1, #div2, #div3, #div4, #div6, #div5, #div7, #newId {
+  width: 50px;
+  height: 50px; 
+  /*margin: 10px;*/
+  padding: 7px;
+}
+#div8, #div9, #div10 {
           
           width: 60px;
           height: 60px;
@@ -137,15 +138,20 @@
 												<img src="../images/pokeball_green.png"id="div6" draggable="true" ondragstart="drag(event)" id="drag4" ondragend="checkDrops()">
 											</span>
 											</div>
+                                        <div ondrop="drop(event)" ondragover="allowDrop(event)" class="col-12-xsmall">
+                                            <span id="white">
+                                                <img src="../images/pokeball_white.png"id="div7" draggable="true" ondragstart="drag(event)" id="drag4" ondragend="checkDrops()">
+                                            </span>
+                                            </div>
 									</div>
 								</div>
 								<div class="row">
 									<div class="column">
-										<div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-										
 										<div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-							
+										
 										<div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+							
+										<div id="div10" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 							
 									</div>
 								</div>
