@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Catch Em All!</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
+		<link rel="icon" type="image/png"  href="../images/pokeball.png">
+		<noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Menu -->
+					
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            <!-- Form: enter a color and depending on color goes to webpage... each head titled with name-->
+							<section>
+                                <h2>Let's Gooooo</h2>
+                                <form method="post" action="#">
+                                    <div class="row gtr-uniform">
+                                        <div class="col-3">
+                                            <div >
+                                                <input type="text" id="s1" placeholder="-"  maxlength="1" style="text-align:center;" autofocus> 
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div >
+                                                <input type="text" id="s2" placeholder="-"  maxlength="1"style="text-align:center;">
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div >
+                                                <input type="text" id="s3" placeholder="-"  maxlength="1"style="text-align:center;"> 
+                                            </div>
+                                        </div>
+                                        <div class="col-3">
+                                            <div >
+                                                <input type="text" id="s4" placeholder="-"  maxlength="1" style="text-align:center;" onkeyup="finale()">
+                                              </div>
+                                        </div>
+                                        <div class="col-12">
+                                                <button class="button primary fit" id="btn" style="display:none;"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
+                                             
+                                        </div>
+                                    </div>
+                                </form>
+                                <h4>_ _ _ _   _ R _ _ _ _ O _ _ _ _   _ _ U   _ _ _ _   _ E _</h4>
+                                <span class="image main" id="img" style="display:none"><img src="../images/house.png" alt="" /></span>
+							</section>
+						</div>
+					</div>
+						
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+                
+				function finale(){
+                    var s1 = document.getElementById("s1").value.toLowerCase()
+                    var s2 = document.getElementById("s2").value.toLowerCase()
+                    var s3 = document.getElementById("s3").value.toLowerCase()
+                    var s4 = document.getElementById("s4").value.toLowerCase()
+                    if(s1=="p" && s2=="e" && s3=="c" && s4=="k"){
+                        document.getElementById("img").style.display = "inline";
+                    }
+                }
+			</script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
+
+	</body>
+</html>
