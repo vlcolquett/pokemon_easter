@@ -49,8 +49,8 @@
 			<script>
 				document.getElementById("btn").addEventListener("click", function(event){
   					event.preventDefault()
-					var col = document.getElementById("color").value;
-					var col2 = document.getElementById("color2").value;
+					var col = document.getElementById("color").value.trim();
+					var col2 = document.getElementById("color2").value.trim();
 					col = col.toLowerCase(col);
 					col2 = col2.toLowerCase(col2);
 					console.log(col," : ",col2);

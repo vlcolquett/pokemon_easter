@@ -33,7 +33,7 @@
 											<input type="text" name="color" id="color2" value=""/>
                                         </div>
                                         <div class="col-12">
-                                                <button class="button primary fit" id="btn" style="background-color:rgb(181, 59, 238)">Pokemon</button>
+                                                <button class="button primary fit" id="btn" style="background-color:rgb(181, 59, 238)"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
                                         </div>
                                     </div>
                                 </form>
@@ -49,8 +49,8 @@
 			<script>
 				document.getElementById("btn").addEventListener("click", function(event){
   					event.preventDefault()
-					var col = document.getElementById("color").value;
-					var col2 = document.getElementById("color2").value;
+					var col = document.getElementById("color").value.trim();
+					var col2 = document.getElementById("color2").value.trim();
 					col = col.toLowerCase(col);
 					col2 = col2.toLowerCase(col2);
 					console.log(col," : ",col2);
@@ -60,7 +60,7 @@
 					}else{
 						if (col == "forretress" || col == "dewgong"){
 							if(col2 == "forretress" || col2 == "dewgong"){
-								window.location.href = "../start.html";
+								window.location.href = "../finale/light_purp.html";
 							}else{
 								document.getElementById("color").value = "";
 								document.getElementById("color2").value = "";

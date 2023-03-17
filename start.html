@@ -32,7 +32,7 @@
                                             <input type="text" name="color" id="color" value="" autofocus/>
                                         </div>
                                         <div class="col-12">
-                                                <button class="button primary fit" id="btn"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
+                                                <button class="button primary fit" id="btn"><img src="images/pokemon.png" alt="" height="40px" width="110px"/></button>
                                              
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
 			<script>
 				document.getElementById("btn").addEventListener("click", function(event){
   					event.preventDefault()
-					var col = document.getElementById("color").value;
+					var col = document.getElementById("color").value.trim();
 					console.log(col);
 					switch (col.toLowerCase()){
 						case "wynaut":
@@ -64,7 +64,7 @@
 							window.location.href = "yellow/7ddr.html";
 							break;
 						case "celebi":
-							window.location.href = "dark_purp/7rvi.html";
+							window.location.href = "dark_purp/8iej.html";
 							break;
 						case "zebstrika":
 							window.location.href = "light_purp/4p5f.html";

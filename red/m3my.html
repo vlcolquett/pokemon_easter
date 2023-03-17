@@ -49,7 +49,7 @@
 			<script>
 				document.getElementById("btn").addEventListener("click", function(event){
   					event.preventDefault()
-					var col = document.getElementById("color").value;
+					var col = document.getElementById("color").value.trim();
 					col = col.toLowerCase(col);
 					console.log(col);
 					if (col == "scolipede"){
