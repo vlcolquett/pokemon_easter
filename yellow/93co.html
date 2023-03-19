@@ -27,10 +27,13 @@
 							<section>
                                 <h2>Let's Gooooo</h2>
 								<p>"Therefore, if anyone is in Christ, the new creation has come: The old has gone, the new is here!"</p>
-                                <form method="post" action="#">
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="text" name="bible" id="bible" value="" onkeyup="bible()"/>
+                               	</div>
+								<form method="post" action="#">
                                     <div class="row gtr-uniform">
                                         <div class="col-6 col-12-xsmall">
-                                            <input type="text" name="color" id="color" value="" onkeyup="bible()"/>
+                                            <input type="text" name="color" id="color" value="" style="display:none"/>
                                         </div>
                                         <div class="col-12">
                                                 <button class="button primary fit" id="btn" style="background-color:rgb(255, 255, 0); display:none;"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
@@ -49,14 +52,15 @@
 		<!-- Scripts -->
 			<script>
 				function bible(){
-					var word = document.getElementById("color");
+					var word = document.getElementById("bible");
 					var checker = word.value.length;
 					if(checker === 18){
 						var verse = word.value.toLowerCase();
 						console.log(verse);
 						if(verse === "2 corinthians 5:17"){
 							document.getElementById("btn").style.display = "inline";
-							word.value = "";
+							document.getElementById("color").style.display = "inline";
+							document.getElementById("bible").style.display = "none";
 						}else{
 							word.value="";
 						}

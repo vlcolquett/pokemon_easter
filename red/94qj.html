@@ -27,10 +27,13 @@
 							<section>
                                 <h2>Let's Gooooo</h2>
 								<p>"For we believe that Jesus died and rose again, and so we believe that God will bring with Jesus those who have fallen asleep in him."</p>
-                                <form method="post" action="#">
+                                <div class="col-6 col-12-xsmall">
+                                    <input type="text" name="bible" id="bible" value="" onkeyup="bible()"/>
+                               	</div>
+								<form method="post" action="#">
                                     <div class="row gtr-uniform">
                                         <div class="col-6 col-12-xsmall">
-                                            <input type="text" name="color" id="color" value="" onkeyup="bible()"/>
+                                            <input type="text" name="color" id="color" value="" style="display:none"/>
                                         </div>
                                         <div class="col-12">
                                                 <button class="button primary fit" id="btn" style="background-color:rgb(255, 0, 0); display:none;"><img src="../images/pokemon.png" alt="" height="40px" width="110px"/></button>
@@ -49,14 +52,15 @@
 		<!-- Scripts -->
 			<script>
 				function bible(){
-					var word = document.getElementById("color");
+					var word = document.getElementById("bible");
 					var checker = word.value.length;
 					if(checker === 18){
 						var verse = word.value.toLowerCase();
 						console.log(verse);
 						if(verse === "thessalonians 4:14"){
 							document.getElementById("btn").style.display = "inline";
-							word.value = "";
+							document.getElementById("color").style.display = "inline";
+							document.getElementById("bible").style.display = "none";
 						}else{
 							word.value="";
 						}
@@ -69,7 +73,7 @@
 					var col = document.getElementById("color").value.trim();
 					col = col.toLowerCase(col);
 					console.log(col);
-					if (col == "emboar"){
+					if (col == "axew"){
 						window.location.href = "f6to.html";
 					}
 					else{
