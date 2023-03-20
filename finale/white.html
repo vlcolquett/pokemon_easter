@@ -70,13 +70,15 @@
                 function almost(){
                     var crt = document.getElementById("crt").value
                     console.log(crt);
-                    if(crt == "12"){
-                        document.getElementById("crt").style.display = "none";
-                        document.getElementById("crt-img").style.display = "none";
-                        document.getElementById("clue").style.display = "inline";
-                        document.getElementById("form").style.display = "inline";
-                    }else{
-                        document.getElementById("crt").value = ""
+                    if(crt.length===2){
+                        if(crt == "12"){
+                            document.getElementById("crt").style.display = "none";
+                            document.getElementById("crt-img").style.display = "none";
+                            document.getElementById("clue").style.display = "inline";
+                            document.getElementById("form").style.display = "inline";
+                        }else{
+                            document.getElementById("crt").value = ""
+                        }
                     }
                 }
 				function finale(){
